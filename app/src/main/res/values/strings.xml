@@ -5,4 +5,6 @@
     <string name="click_me">Click me !</string>
     <string name="tada">Tada !</string>
     <string name="secondary_title">Seconde page 🌌</string>
+    <string name="text_input_left">Nom</string>
+    <string name="text_input_right">Prénom</string>
 </resources>
