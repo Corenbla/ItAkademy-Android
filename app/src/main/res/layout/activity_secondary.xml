@@ -7,48 +7,89 @@
     tools:context=".SecondaryActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/secondTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/secondary_title"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.908" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
-        android:layout_height="354dp"
-        android:background="@color/purple_700"
+        android:layout_width="312dp"
+        android:layout_height="569dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="200dp"
+            android:id="@+id/editTextTextEmployeeFirstname"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:ems="10"
-            android:hint="@string/text_input_left"
+            android:hint="Name"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="100dp"
+            android:id="@+id/editTextTextEmployeeLastname"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:ems="10"
-            android:hint="@string/text_input_right"
+            android:hint="Prénom"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmployeeFirstname" />
+
+        <EditText
+            android:id="@+id/editTextTextEmployeeAge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Age"
+            android:inputType="number"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextEmployeeSalary"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/editTextTextEmployeeLastname"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <EditText
+            android:id="@+id/editTextTextEmployeeSalary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:ems="10"
+            android:hint="Salaire"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextEmployeeLastname"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/editTextTextEmployeeAge"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:onClick="insertEmployee"
+            android:text="CREATE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmployeeAge" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
