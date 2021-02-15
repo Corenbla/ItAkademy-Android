@@ -2,6 +2,7 @@ package com.example.itakademy_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,5 +28,12 @@ public class MainActivity extends AppCompatActivity {
         rightButton.setText(R.string.tada);
 
          Toast.makeText(this, "🎊", Toast.LENGTH_SHORT).show();
+    }
+
+    public void goToSecondaryActivity(View view) {
+        Intent intent = new Intent(this, SecondaryActivity.class);
+        intent.putExtra("extra","I'm extra!");
+
+        startActivity(intent);
     }
 }

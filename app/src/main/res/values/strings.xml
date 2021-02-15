@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">ItAkademy-Android</string>
-    <string name="main_button_left">Foo</string>
+    <string name="main_button_left">Woosh 🚀</string>
     <string name="main_button_right">Bar</string>
     <string name="click_me">Click me !</string>
     <string name="tada">Tada !</string>
+    <string name="secondary_title">Seconde page 🌌</string>
 </resources>
