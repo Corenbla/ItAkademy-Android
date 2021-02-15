@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ItAkademy-Android</string>
+    <string name="main_button_left">Foo</string>
+    <string name="main_button_right">Bar</string>
 </resources>
