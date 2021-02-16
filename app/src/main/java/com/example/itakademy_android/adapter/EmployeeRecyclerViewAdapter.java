@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.itakademy_android.R;
@@ -15,24 +14,24 @@ import com.example.itakademy_android.entity.Employee;
 import java.util.List;
 
 public class EmployeeRecyclerViewAdapter extends RecyclerView.Adapter<EmployeeRecyclerViewAdapter.ViewHolder> {
-    private final List<Employee> mData;
-    private final LayoutInflater mInflater;
-    private ItemClickListener itemClickListener;
 
-    public EmployeeRecyclerViewAdapter(Context context, List<Employee> mData) {
+    private List<Employee> mData;
+    private LayoutInflater mInflater;
+    private ItemClickListener mItemClickListener;
+
+    public EmployeeRecyclerViewAdapter(Context context, List<Employee> data){
         this.mInflater = LayoutInflater.from(context);
-        this.mData = mData;
+        this.mData = data;
     }
 
-    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View view = mInflater.inflate(R.layout.item_employee, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         String employeeFullName = mData.get(position).getFullName();
         holder.myTextView.setText(employeeFullName);
     }
@@ -43,20 +42,31 @@ public class EmployeeRecyclerViewAdapter extends RecyclerView.Adapter<EmployeeRe
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
         TextView myTextView;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
-            this.myTextView = itemView.findViewById(R.id.employeeFullName);
+            myTextView = itemView.findViewById(R.id.employeeFullName);
+            itemView.setOnClickListener(this);
         }
 
         @Override
-        public void onClick(View view) {
-            itemClickListener.onItemClick(view, getAdapterPosition());
+        public void onClick(View view){
+            if (mItemClickListener != null) mItemClickListener.onItemClick(view, getAdapterPosition());
         }
     }
 
-    interface ItemClickListener {
+    public int getItem(int position){
+        return  mData.get(position).getId();
+    }
+
+    public void setClickListener(ItemClickListener itemClickListener){
+        this.mItemClickListener = itemClickListener;
+    }
+
+    public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
+
 }

@@ -7,4 +7,6 @@
     <string name="secondary_title">Seconde page 🌌</string>
     <string name="text_input_left">Nom</string>
     <string name="text_input_right">Prénom</string>
+    <string name="btnValue1">foo</string>
+    <string name="btnValue2">bar</string>
 </resources>
